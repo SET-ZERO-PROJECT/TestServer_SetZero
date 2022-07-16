@@ -1,0 +1,21 @@
+[
+  {
+    "name": "EPJame",
+    "master": true,
+    "password_hash": "$2a$11$OPzSiowMXoQzLlF2SbjkCe54MqQxbIN61aUWjDZSEy5hZYmk36oPm",
+    "providers": {
+      "citizenfx": {
+        "id": "EPJame",
+        "identifier": "fivem:4858605",
+        "data": {
+          "sub": "950bcace54352aa1802414c06c7dae1c",
+          "nameid": "https://forum.cfx.re/internal/user/4858605",
+          "name": "EPJame",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/epjame/256/695212_2.png",
+          "profile": "https://forum.cfx.re/u/EPJame"
+        }
+      }
+    },
+    "permissions": []
+  }
+]

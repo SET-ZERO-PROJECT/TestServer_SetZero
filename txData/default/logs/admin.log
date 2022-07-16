@@ -1,0 +1,9 @@
+
+================================================================
+======== txAdmin Starting - 7/16/2022, 1:38:51 PM               
+================================================================
+[13:39:28] [EPJame] created admins file
+[13:42:00] [EPJame] Changing global settings via setup stepper and started Deployer.
+[13:42:05] [EPJame] Setting recipe.
+[13:42:27] [EPJame] Running recipe.
+[13:43:37] [EPJame] Completed and committed server deploy.
