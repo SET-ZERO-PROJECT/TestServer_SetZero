@@ -34,8 +34,11 @@
     "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
+    "serverDataPath": "D:/fivemproject/TestSetZero/server/",
+    "cfgPath": "D:/fivemproject/TestSetZero/server/server.cfg",
+    "commandLine": "",
+    "onesync": "off",
     "autostart": true,
-    "serverDataPath": "D:/fivemproject/TestSetZero/server/resources/",
-    "cfgPath": "D:/fivemproject/TestSetZero/server/resources/server.cfg"
+    "quiet": false
   }
 }
