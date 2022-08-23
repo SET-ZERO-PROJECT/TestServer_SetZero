@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@font-face {
+    font-family: fuente;
+    src: url('/html/font/digital-7.ttf');
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    /* animation: fadeInUp; */
+    /* animation-duration: 2s; */
+    color: rgb(255, 255, 255);
+    font-family: 'Kanit', sans-serif;
+    /* background-color: gray; */
+}
+
+.cs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    max-width: 980%;
+    bottom: 0%;
+    right:  1%;
+    border-radius: 10px;
+    padding: 5px;
+    /* transform: perspective( 600px) rotateY( -30deg); */
+}
+
+.kk-box {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: -40%;
+    left: -10%;
+    display: flex;
+    overflow: hidden;
+}
+
+.pid {
+    padding: 0px 5px;
+}
+
+#amor-box {
+    position: absolute;
+    top: 6.2rem;
+    left: 10.5rem;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+#swim-box {
+    position: absolute;
+    top: 6.2rem;
+    left: 6.5rem;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.tex {
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 1.0px 1.0px 0 rgb(0, 0, 0);
+}
+
+/* .fa-shield-alt {
+    position: absolute;
+    top: 0;
+    font-size: 25px;
+    background-image: linear-gradient(to top, #ff0015 0%, #ff5151 74%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 2px rgba(255, 0, 0, 0.726);
+} */
+
+
+/* .fa-running {
+    position: absolute;
+    top: 0;
+    font-size: 25px;
+    background-image: linear-gradient(to top, #ff0015 0%, #ff5757 74%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 2px rgba(255, 0, 0, 0.726);
+} */
+
+.fa-swimmer {
+    position: absolute;
+    top: 0;
+    font-size: 25px;
+    background-image: linear-gradient(to top, #00a2ff 0%, #515dff 74%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    /* text-shadow: 0px 0px 2px rgba(255, 0, 0, 0.726); */
+}
+
+.sk-boxlogo {
+    height: 155px;
+    width: 155px;
+    position: absolute;
+    left: 73%;
+    bottom: -25%;
+    background-color: transparent;
+    overflow: hidden;
+    /* border-radius: 5px */
+}
+
+.logo {
+    height: 115px;
+    width: 115px;
+    margin-left: 15%;
+    background-image: url('../html/img/logo.png');
+    background-position: center;
+    background-size: cover;
+    z-index: 999;
+    /* animation: sk 4s linear infinite */
+}
+
+.effl {
+    height: 100%;
+    width: 50px;
+    z-index: 100;
+    position: absolute;
+    /* animation: upp 5s infinite linear; */
+    opacity: .8;
+    transition: .5s;
+    /* background: linear-gradient(87deg, rgba(255, 255, 255, 0.479) 0%, rgba(255, 255, 255, 0.479) 100%) */
+}
+
+.v {
+    position: relative;
+    width: 408px;
+    height: 115px;
+    display: flex;
+    /* border-radius: 0 0 5px 5px; */
+    /* border-left: 3px solid #171718; */
+    /* background: linear-gradient(to left, transparent, #171718b0); */
+}
+
+.o {
+    display: flex;
+    width: 222px;
+    position: absolute;
+    left: .3rem;
+    background: rgba(0, 0, 0, 0.336);
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: center;
+    /* overflow: hidden; */
+    /* border-radius: 5px; */
+    top: 1.5rem;
+}
+
+.a {
+    display: flex;
+    width: 212px;
+    position: absolute;
+    left: .3rem;
+    background: rgba(0, 0, 0, 0.336);
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: center;
+    /* overflow: hidden; */
+    /* border-radius: 5px; */
+    top: 3.1rem;
+}
+
+
+.s {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.aa {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    margin: 0 auto;
+}
+
+.j {
+    display: flex;
+    width: 190px;
+    position: absolute;
+    left: .0rem;
+    top: 3.76rem;
+}
+
+.k {
+    position: relative;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.336);
+    height: 40px;
+    margin: 0 auto;
+    margin-left: 3%;
+    /* overflow: hidden; */
+    /* border-radius: 5px; */
+}
+
+.fa-heart,
+.fa-apple-alt {
+    position: absolute;
+    z-index: 1000;
+    font-size: 20px;
+    right: 12px;
+}
+.fa-laugh {
+    position: absolute;
+    z-index: 1000;
+    font-size: 20px;
+    right: 10px;
+}
+
+.fa-tint {
+    position: absolute;
+    z-index: 1000;
+    font-size: 20px;
+    right: 14px;
+}
+
+#h {
+    opacity: 0.8;
+    transition: 0.5s;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* animation: color  2s linear infinite alternate both; */
+    background: linear-gradient(87deg, rgba(80, 191, 255, 0.747) 10%,rgba(0, 32, 211, 0.842) 60%);
+    border: 1px solid rgb(34, 122, 255);
+    box-shadow: 1px 1px 8px 1px rgb(0, 110, 255);
+}
+
+#sm {
+    opacity: 0.8;
+    transition: 0.5s;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* animation: color  2s linear infinite alternate both; */
+    background: linear-gradient(87deg, rgba(255, 255, 255, 0.911) 10%, rgba(165, 165, 165, 0.842) 60%);
+    border: 1px solid rgb(156, 156, 156);
+    box-shadow: 1px 1px 8px 1px rgb(116, 116, 116);
+}
+
+#fo {
+    opacity: 0.8;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* animation: color  2s linear infinite alternate both; */
+    background: linear-gradient(180deg, rgba(80, 191, 255, 0.747) 10%,rgba(0, 32, 211, 0.842) 60%);
+    border: 1px solid rgb(34, 122, 255);
+    box-shadow: 1px 1px 8px 1px rgb(0, 110, 255);
+}
+
+#wa {
+    opacity: 0.8;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* animation: color  2s linear infinite alternate both; */
+    background: linear-gradient(180deg, rgba(80, 191, 255, 0.747) 10%,rgba(0, 32, 211, 0.842) 60%);
+    border: 1px solid rgb(34, 122, 255);
+    box-shadow: 1px 1px 8px 1px rgb(0, 110, 255);
+}
+
+#ss {
+    opacity: 0.8;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* animation: color  2s linear infinite alternate both; */
+    background: linear-gradient(180deg, rgba(80, 191, 255, 0.747) 10%,rgba(0, 32, 211, 0.842) 60%);
+    border: 1px solid rgb(34, 122, 255);
+    box-shadow: 1px 1px 8px 1px rgb(0, 110, 255);
+}
+
+#iidd {
+    opacity: 0.8;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    /* animation: color  2s linear infinite alternate both; */
+    background: linear-gradient(180deg, rgba(80, 191, 255, 0.747) 10%,rgba(0, 32, 211, 0.842) 60%);
+    border: 1px solid rgb(34, 122, 255);
+    box-shadow: 1px 1px 8px 1px rgb(0, 110, 255);
+}
+
+#h-p,
+#f-p,
+#s-p,
+#b-p,
+#sh-p,
+#w-p {
+    position: absolute;
+    font-family: 'fuente', sans-serif;
+    font-size: 20px;
+    z-index: 100;
+    right: 44%;
+}
+
+#name {
+    padding: 0 5px;
+    color: rgb(255, 187, 0);
+    /* font-weight: 900; */
+}
+
+#id {
+    font-size: 1.5vmin;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* width: 85px; */
+    /* height: 30px; */
+    right: 0%;
+    top: 25%;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+}
+
+.fa-id-card-alt {
+    position: absolute;
+    z-index: 1000;
+    font-size: 16px;
+    top: 5px;
+    left: 12px;
+}
+
+#box-one {
+    display: flex;
+    margin-left: 65%;
+}

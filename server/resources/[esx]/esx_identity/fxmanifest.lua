@@ -23,13 +23,13 @@ client_scripts {
 	'client/main.lua'
 }
 
-ui_page 'html/index.html'
+ui_page 'html/ui.html'
 
 files {
-	'html/index.html',
+	'html/ui.html',
 	'html/js/script.js',
-	'html/css/style.css',
-	'html/img/esx_identity.png'
+	'html/style.css',
+	'html/img/bg2.png'
 }
 
 dependency 'es_extended'

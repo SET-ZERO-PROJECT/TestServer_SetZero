@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESX INVENTORY HUD</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Signika"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/contextMenu.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="js/config.js"></script>
+    <script src="js/en.js"></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="js/contextMenu.min.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script>
+      $(function () {
+        $("#dialog").dialog({
+          autoOpen: false,
+          clickOutside: true,
+        });
+        $("#close").click(() => {
+          $.post("http://esx_inventoryhud/NUIFocusOff", JSON.stringify({}));
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+
+    <div id="playerInventoryHotbar"></div>
+    <div class="ui">
+      <div class="inventory" id="inventory">
+	    <div class="category">
+				<div id="category-body">
+				
+				</div>
+			</div>
+        <div class="header">
+          <span id="headerText" class="header-text">&nbsp;INVENTORY</span>
+          <span class="header-text-right">&nbsp;</span>
+        </div>
+        <div id="playerInventory"></div>
+        <div id="playerInventoryFastItems"></div>
+        <div id="otherInventory">
+          <div id="noSecondInventoryMessage"></div>
+        </div>
+        <div style="width: 100%; bottom: 0; top: auto">
+          <p align="right" class="info-div"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="dialog" style="left: 66px">
+      <div id="nearPlayers"></div>
+    </div>
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $("#use").html(invLocale.useItem);
+      $("#give").html(invLocale.giveItem);
+      $("#drop").html(invLocale.dropItem);
+      $("#noSecondInventoryMessage").html(
+        invLocale.secondInventoryNotAvailable
+      );
+    });
+  </script>
+</html>

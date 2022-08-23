@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+
+</head>
+
+<body onkeydown="TriggeredKey(this)">
+    <div class="wrapper">
+        <div class="curv">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="100 0 340 118">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="3%" style="stop-color:rgb(250, 119, 232);stop-opacity:1" />
+                        <stop offset="10%" style="stop-color:rgb(191, 80, 243);stop-opacity:1" />
+                        <stop offset="30%" style="stop-color:rgb(24, 57, 148);stop-opacity:1" />
+
+                    </linearGradient>
+                </defs>
+                <path fill="url(#grad1)" fill-opacity="1"
+                    d="M0,128L48,112C96,96,192,64,288,74.7C384,85,480,139,576,160C672,181,768,171,864,160C960,149,1056,139,1152,144C1248,149,1344,171,1392,181.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                </path>
+
+            </svg>
+        </div>
+        <div class="container-content">
+            <div class="title-text">
+                <div class="title login">
+                    Register Players
+                </div>
+
+            </div>
+            <div class="form-container">
+
+                <div class="form-inner">
+                    <form method="POST" id="register" class="login">
+                        <div class="field">
+                            <input type="text" placeholder="Name" id="fname" name="Firstname"
+                                onKeyDown="if(this.value.length==16 && event.keyCode!=8) return false;"
+                                onkeypress="if (isNumber(event) == true) return false;" onKeyUp="checkFirstName()"
+                                onmouseup="checkFirstName()" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Surename" id="lname" name="Lastname"
+                                onKeyDown="if(this.value.length==16 && event.keyCode!=8) return false;"
+                                onkeypress="if (isNumber(event) == true) return false;" onKeyUp="checkLastName()"
+                                onmouseup="checkLastName()" required>
+                        </div>
+
+                        <div class="field">
+                            <input id="dateofbirth" type="text" name="dateofbirth" class=""
+                                placeholder="Date of Birth (MM/DD/YYYY)" dateformat="M d y" min="01/01/1900"
+                                max="12/31/2020" onfocus="(this.type='date')"
+                                onkeypress="if ( isNaN(String.fromCharCode(event.keyCode) )) return false;"
+                                onchange="checkDOB()" onKeyUp="checkDOB()" onmouseup="checkDOB()">
+                        </div>
+                        <div class="field">
+                            <input id="height" type="number" class="" name="height" min="100" max="250"
+                                placeholder="ส่วนสูง"
+                                onKeyDown="if(this.value.length==3 && event.keyCode!=8) return false;"
+                                onkeypress="if ( isNaN(String.fromCharCode(event.keyCode) )) return false;" required>
+
+                        </div>
+                        <br>
+                        <center>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="radiom" name="sex" value="m" checked>
+                                <label for="radiom">Male</label>
+
+                                <input type="radio" id="radiof" name="sex" value="f">
+                                <label for="radiof">Female</label>
+                            </div>
+                        </center>
+
+                        <div class="field btn">
+                            <div class="formGroup">
+                                <button type="submit" class="btn2">REGISTER</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script> -->
+
+    <script src="js/validator.min.js"></script>
+    <script>
+
+        const allRanges = document.querySelectorAll(".range-wrap");
+        allRanges.forEach(wrap => {
+            const range = wrap.querySelector(".range");
+            const bubble = wrap.querySelector(".bubble");
+
+            range.addEventListener("input", () => {
+                setBubble(range, bubble);
+            });
+            setBubble(range, bubble);
+        });
+
+        function setBubble(range, bubble) {
+            const val = range.value;
+            const min = range.min ? range.min : 0;
+            const max = range.max ? range.max : 100;
+            const newVal = Number(((val - min) * 100) / (max - min));
+            bubble.innerHTML = 'Height: ' + val;
+            bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+        }
+
+        var myFirstName = document.getElementById('fname');
+        var myLastName = document.getElementById('lname');
+        var myDOB = document.getElementById('dateofbirth');
+        var myHeight = document.getElementById('height');
+
+        function isNumber(e) {
+            var key = e.which || e.KeyCode;
+            if (key >= 48 && key <= 57) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function checkFirstName() {
+            var value = myFirstName.value;
+            if (value.trim().match(/^[a-zA-Z][0-9a-zA-Z .,'-]*$/) == null) {
+                myFirstName.style.backgroundColor = '#E06666';
+                myFirstName.style.color = 'black';
+            }
+            else {
+                if (value.length > 0 && value.length < 17) {
+                    myFirstName.style.backgroundColor = '#B6D7A8';
+                    myFirstName.style.color = 'black';
+                }
+                else {
+                    myFirstName.style.backgroundColor = '#E06666';
+                    myFirstName.style.color = 'black';
+                }
+            }
+        }
+
+        function checkLastName() {
+            var value = myLastName.value;
+            if (value.trim().match(/^[a-zA-Z][0-9a-zA-Z .,'-]*$/) == null) {
+                myLastName.style.backgroundColor = '#E06666';
+                myLastName.style.color = 'black';
+            }
+            else {
+                if (value.length > 0 && value.length < 17) {
+                    myLastName.style.backgroundColor = '#B6D7A8';
+                    myLastName.style.color = 'black';
+                }
+                else {
+                    myLastName.style.backgroundColor = '#E06666';
+                    myLastName.style.color = 'black';
+                }
+            }
+        }
+
+        function checkDOB() {
+            var date = new Date($('#dateofbirth').val());
+            day = date.getDate();
+            month = date.getMonth() + 1;
+            year = date.getFullYear();
+            if (isNaN(month) || isNaN(day) || isNaN(year)) {
+                myDOB.style.backgroundColor = '#E06666';
+                myDOB.style.color = 'black';
+            }
+            else {
+                var dateInput = [month, day, year].join('/');
+
+                var regExp = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+                var dateArray = dateInput.match(regExp);
+
+                if (dateArray == null) {
+                    return false;
+                }
+
+                month = dateArray[1];
+                day = dateArray[3];
+                year = dateArray[5];
+
+                if (month < 1 || month > 12) {
+                    myDOB.style.backgroundColor = '#E06666';
+                    myDOB.style.color = 'black';
+                }
+                else if (day < 1 || day > 31) {
+                    myDOB.style.backgroundColor = '#E06666';
+                    myDOB.style.color = 'black';
+                }
+                else if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+                    myDOB.style.backgroundColor = '#E06666';
+                    myDOB.style.color = 'black';
+                }
+                else if (month == 2) {
+                    var isLeapYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+                    if (day > 29 || (day == 29 && !isLeapYear)) {
+                        myDOB.style.backgroundColor = '#E06666';
+                        myDOB.style.color = 'black';
+                    }
+                }
+                else {
+                    myDOB.style.backgroundColor = '#B6D7A8';
+                    myDOB.style.color = 'black';
+                }
+            }
+        }
+
+        function TriggeredKey(e) {
+            var keycode;
+            if (window.event) keycode = window.event.keyCode;
+            if (window.event.keyCode == 13 || window.event.keyCode == 27) return false;
+        }
+    </script>
+</body>
+
+</html>

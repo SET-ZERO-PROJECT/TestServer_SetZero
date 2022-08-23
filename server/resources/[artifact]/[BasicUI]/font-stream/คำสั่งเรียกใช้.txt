@@ -1,0 +1,20 @@
+ใช้ได้เฉพาะ 3D Text เท่านั้น ยกตัวอย่าง  เวลาตายแล้วกด G เรียกหมอ นั่นคือ 3D Text   
+คำสั่งนี้ทำงานฝั่ง Client 
+
+**** วิธีใช้งาน *****
+start font-stream
+
+***** คำสั่งสำหรับไปเขียนฝั่ง Client  **********
+
+ SetTextFont(fontId)
+ SetTextProportional(0)
+ fontId = RegisterFontId('Mitr')  <---- ชื่อไฟล์ตามใน Folder Stream สามารถเลือกใช้งานได้เลยในที่นี้ใช้เป็น Mitr
+ RegisterFontFile('Mitr')	  <---- ชื่อไฟล์ตามใน Folder Stream สามารถเลือกใช้งานได้เลยในที่นี้ใช้เป็น Mitr
+
+**************************
+
+แก้ทิ้งของเป็นภาษาไทย ให้ไปที่
+
+es_extended\client\functions.lua"
+
+เขียน คำสั่งด้านบนเพิ่ม ดูได้ตามรูปภาพ  จากนั้น restart es_extended จำเป็นต้องรี server

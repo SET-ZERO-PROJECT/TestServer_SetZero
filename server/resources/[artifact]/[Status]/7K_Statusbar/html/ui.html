@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="da-DK">
+
+<head>
+    <title>7K_Statusbar</title>
+    <meta charset="utf-8">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/723d9b901d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" href="ui.css" type="text/css">
+    <script src="ui.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            var $debug = $("#debug");
+            var $heal = $("#heal");
+            var $box = $("#box");
+            var $boxArmor = $("#boxArmor");
+
+            window.addEventListener('message', function(event) {
+                $box.css("width", (event.data.heal - 100) + "%");
+                $boxArmor.css("width", (event.data.armor) + "%");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container cs">
+        <div class="kk-box">
+            <!-- <div id="amor-box" class="pid">
+                <i class="fas fa-shield-alt"></i>
+                <span id="percenA" class="tex">100%</span>
+            </div> -->
+            <div id="swim-box" class="pid">
+                <i class="fas fa-swimmer"></i>
+                <span class="tex">คุณกำลังจม</span>
+            </div>
+        </div>
+        <div id="box-one">
+            <div class="v cs">
+                <div class="o">
+                    <div class="s cs">
+                        <div id="h"></div>
+                        <span id="h-p">100</span>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="aa cs">
+                        <div id="sm"></div>
+                    </div>
+                </div>
+                <div class="j">
+                    <div class="k cs">
+                        <i class="fas fa-tint"></i>
+                        <div id="wa"></div>
+                    </div>
+                    <div class="k cs">
+                        <i class="fas fa-apple-alt"></i>
+                        <div id="fo"></div>
+                    </div>
+                    <div class="k cs">
+                        <i class="fas fa-laugh"></i>
+                        <div id="ss"></div>
+                    </div>
+                    <div class="k cs">
+                        <div id="iidd"></div>
+                        <i class="fas fa-id-card-alt"></i>
+                        <span id="id">1024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sk-boxlogo">
+            <div class="effl"></div>
+            <div class="logo"></div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
