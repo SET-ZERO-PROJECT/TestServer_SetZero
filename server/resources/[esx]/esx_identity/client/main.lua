@@ -23,7 +23,9 @@ if not Config.UseDeferrals then
 	local guiEnabled = false
 
 	function EnableGui(state)
+		print("EnableGui get start")
 		SetNuiFocus(state, state)
+		guiEnabled = state
 		guiEnabled = state
 		while not ready do
 			Citizen.Wait(500)
@@ -37,8 +39,9 @@ if not Config.UseDeferrals then
 	RegisterNetEvent('esx_identity:showRegisterIdentity')
 	AddEventHandler('esx_identity:showRegisterIdentity', function()
 		TriggerEvent('esx_skin:resetFirstSpawn')
-
+		
 		if not ESX.GetPlayerData().dead then
+			print("trig EnableGui")
 			EnableGui(true)
 		end
 	end)
@@ -48,7 +51,8 @@ if not Config.UseDeferrals then
 			if callback then
 				ESX.ShowNotification(_U('thank_you_for_registering'))
 				EnableGui(false)
-				if not ESX.GetConfig().Multichar then TriggerEvent('esx_skin:playerRegistered') end
+				if not ESX.GetConfig().Multichar then 
+					TriggerEvent('esx_skin:playerRegistered') end
 			else
 				ESX.ShowNotification(_U('registration_error'))
 			end

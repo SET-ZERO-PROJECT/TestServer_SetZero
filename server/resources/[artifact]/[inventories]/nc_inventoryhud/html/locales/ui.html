@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ESX INVENTORY HUD BY TRSAK</title>
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ui.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+</head>
+
+<body>
+    <script src="js/config.js"></script>
+    <script src="locales/en.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/inventory.js"></script>
+    <script>
+        $(function () {
+            $("#dialog").dialog({
+                autoOpen: false,
+                clickOutside: true
+            });
+            $("#close").click(() => {
+                $.post("http://esx_inventoryhud/NUIFocusOff", JSON.stringify({}));
+            });
+        });
+    </script>
+
+    <div class="ui">
+        <div class="inventory">
+            <div class="head-bar" style="width: 100%;height: 40px;border: solid #fff 1px;background-color: #2c83e2;padding-top: 10px;">
+                <img src="img/logo.png" alt="" style="width: 180px;position: absolute;margin-top: -110px;margin-left: -20px;">
+                <span style="font-size: 25px;padding-left: 150px;height: 40px;"><b>Inventory</b></span>
+                <span style="float: right;border: solid #fff 1px;background-color: #2f83cc;margin-top: -11px;width: 40px;margin-left: 5px;padding-left: 10px;padding-bottom: 5px;padding-top: 2px;" id="close"><b style="color: #fff;font-size: 35px;"> <i class='fa fa-times'></i> </b></span>
+            </div>
+            <div id="playerInventory">
+            </div>
+            <div id="controls">
+
+                <div class="controls-div">
+                    <input type="number" class="control" id="count" value="1" style="background-color: #fff;border: solid #fff 1px;border-radius: 5px;">
+                    <div class="control" id="use" style="border: solid green 1px;border-radius: 5px;"></div>
+                    <div class="control" id="give" style="border: solid blue 1px;border-radius: 5px;"></div>
+                    <div class="control" id="drop" style="border: solid red 1px;border-radius: 5px;"></div>
+                </div>
+            </div>
+            <div id="otherInventory">
+                <div id="noSecondInventoryMessage">
+                </div>
+            </div>
+            <div style="width: 100%;bottom: 0;top: auto;"><p align="right" class="info-div"></p></div>
+        </div>
+    </div>
+
+    <div id="dialog">
+        <div id="nearPlayers">
+        </div>
+    </div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("#use").html(invLocale.useItem);
+        $("#give").html(invLocale.giveItem);
+        $("#drop").html(invLocale.dropItem);
+        $("#noSecondInventoryMessage").html(invLocale.secondInventoryNotAvailable);
+    });
+</script>
+
+</html>

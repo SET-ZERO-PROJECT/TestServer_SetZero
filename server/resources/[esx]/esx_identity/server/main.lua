@@ -182,10 +182,10 @@ elseif not Config.UseDeferrals then
 
 	ESX.RegisterServerCallback('esx_identity:registerIdentity', function(source, cb, data)
 		local xPlayer = ESX.GetPlayerFromId(source)
-		
 		if xPlayer then
 			if not alreadyRegistered[xPlayer.identifier] then
 				if checkNameFormat(data.firstname) and checkNameFormat(data.lastname) and checkSexFormat(data.sex) and checkDOBFormat(data.dateofbirth) and checkHeightFormat(data.height) then
+					print("format is correct")
 					playerIdentity[xPlayer.identifier] = {
 						firstName = formatName(data.firstname),
 						lastName = formatName(data.lastname),
